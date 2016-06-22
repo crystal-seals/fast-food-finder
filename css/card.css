@@ -19,7 +19,7 @@ body {   font-family: Helvetica, san-serif;
     overflow: hidden;
     position: absolute;
     right: 0;
-    top: 0;
+    top: -100px;
     width: 300px;
 }
 .card:hover {
@@ -113,4 +113,27 @@ p {
     color: #FB8C00;
     -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.round-button {
+	width:20%;
+  position: absolute;
+  bottom: 10px;
+  left: 38%;
+}
+
+
+.round-button-circle {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:10px solid #FFF3E0;
+    overflow:hidden;
+
+    background: #4679BD;
+    box-shadow: 0 0 3px gray;
+}
+.round-button-circle:hover {
+	background:#30588e;
 }
