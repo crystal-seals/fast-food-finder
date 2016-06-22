@@ -1,5 +1,4 @@
-
-var location = {};
+// var location = {};
 
 function getPostcode (code) {
   var baseUrl = "https://api.postcodes.io"

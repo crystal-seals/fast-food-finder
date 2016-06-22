@@ -1,4 +1,4 @@
-var location = {};
+// var location = {};
 
 function getPostcode (code) {
   var baseUrl = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&mode=walking&"
