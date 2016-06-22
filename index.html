@@ -6,7 +6,15 @@
     <link rel="stylesheet" type="text.css" href="style.css">
   </head>
   <body>
-
-    <script src="postcode.js"></script>
+    <div id="postcode-getter-container">
+      <form id="postcode-getter">
+          <input type="text" placeholder="Postcode" id="code" name="code">
+          <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div id="postcode-results-container">
+        <div id="results-body"></div>
+    </div>
+    <script src="js/postcode.js"></script>
   </body>
 </html>
