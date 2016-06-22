@@ -1,10 +1,5 @@
-const DOM = {
-    forms: {
-      postcode: document.getElementById('postcode-getter')
-    }
-  }
-var longitude;
-var latitude;
+
+var location = {};
 
 function getPostcode (code) {
   var baseUrl = "https://api.postcodes.io"
@@ -15,8 +10,8 @@ function getPostcode (code) {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
         var response = JSON.parse(xhr.response)
-        longitude = response.result.longitude
-        latitude = response.result.latitude
+        location.longitude = response.result.longitude
+        location.latitude = response.result.latitude
       }
   }
 
