@@ -1,7 +1,7 @@
 // var location = {};
 
 function getPostcode (code) {
-  var baseUrl = "https://api.postcodes.io"
+  var baseUrl = "https://api.postcodes.io";
   var path = "/postcodes/" + code + ""
 
   var xhr = new XMLHttpRequest ()
