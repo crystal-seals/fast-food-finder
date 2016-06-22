@@ -137,3 +137,8 @@ p {
 .round-button-circle:hover {
 	background:#30588e;
 }
+
+#description0 {
+  width: 100%;
+  text-align: center;
+}
