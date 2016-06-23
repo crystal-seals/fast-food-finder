@@ -1,4 +1,4 @@
-var longtitude, latitude;
+var longitude, latitude;
 var currentRestaurant = {};
 
 var xhr = new XMLHttpRequest();
@@ -41,10 +41,10 @@ document.getElementById("button").addEventListener("click", function() {
 });
 
 function updateElements() {
-  document.getElementById("image0").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
-  document.getElementById("title0").innerHTML = currentRestaurant.name;
-  document.getElementById("description0").innerHTML = currentRestaurant.rating + '/5';
-  document.getElementById("link").href = "http://maps.google.com/?q=" + currentRestaurant.latitude + "," + currentRestaurant.longitude;
+  document.getElementById("image").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
+  document.getElementById("title").innerHTML = currentRestaurant.name;
+  document.getElementById("rating").innerHTML = currentRestaurant.rating + '/5';
+  document.getElementById("mapLink").href = "http://maps.google.com/?q=" + currentRestaurant.latitude + "," + currentRestaurant.longitude;
 
 }
 function getGeolocation(callback){
