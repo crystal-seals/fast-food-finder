@@ -13,6 +13,8 @@ function updateRestaurant() {
   currentRestaurant.cuisines = input.cuisines
   currentRestaurant.rating = input.user_rating.aggregate_rating;
   currentRestaurant.address = input.location.address;
+  currentRestaurant.latitude = input.location.latitude;
+  currentRestaurant.longitude = input.location.longitude;
   updateElements();
   count++;
 }
@@ -43,8 +45,5 @@ function updateElements() {
   document.getElementById("image").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
   document.getElementById("title").innerHTML = currentRestaurant.name;
   document.getElementById("rating").innerHTML = currentRestaurant.rating + '/5';
-  document.getElementById("link").href = "https://www.google.co.uk/maps/place/@" + latitude + "," + longtitude + ",17z/data=!3m1!4b1!4m5!3m4!1s0x48761d299b2ed2ab:0x900eafdd9e9e2445!8m2!3d51.5210882!4d-0.0448327"
-
-
-
+  document.getElementById("link").href = "http://maps.google.com/?q=" + currentRestaurant.latitude + "," + currentRestaurant.longitude;
 }
