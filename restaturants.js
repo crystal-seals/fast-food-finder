@@ -43,6 +43,7 @@ document.getElementById("button").addEventListener("click", function() {
 function updateElements() {
   document.getElementById("image").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
   document.getElementById("title").innerHTML = currentRestaurant.name;
+  document.getElementById("cuisine").innerHTML = currentRestaurant.cuisines;
   document.getElementById("rating").innerHTML = currentRestaurant.rating + '/5';
   document.getElementById("mapLink").href = "http://maps.google.com/?q=" + currentRestaurant.latitude + "," + currentRestaurant.longitude;
 
