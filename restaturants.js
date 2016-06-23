@@ -40,10 +40,10 @@ document.getElementById("button").addEventListener("click", function() {
 });
 
 function updateElements() {
-  document.getElementById("image0").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
-  document.getElementById("title0").innerHTML = currentRestaurant.name;
-  document.getElementById("description0").innerHTML = currentRestaurant.rating + '/5';
-  document.getElementById("link0").href = "https://www.google.co.uk/maps/place/@" + latitude + "," + longtitude + ",17z/data=!3m1!4b1!4m5!3m4!1s0x48761d299b2ed2ab:0x900eafdd9e9e2445!8m2!3d51.5210882!4d-0.0448327"
+  document.getElementById("image").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
+  document.getElementById("title").innerHTML = currentRestaurant.name;
+  document.getElementById("rating").innerHTML = currentRestaurant.rating + '/5';
+  document.getElementById("link").href = "https://www.google.co.uk/maps/place/@" + latitude + "," + longtitude + ",17z/data=!3m1!4b1!4m5!3m4!1s0x48761d299b2ed2ab:0x900eafdd9e9e2445!8m2!3d51.5210882!4d-0.0448327"
 
 
 
