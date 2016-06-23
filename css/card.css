@@ -138,7 +138,17 @@ p {
 	background:#30588e;
 }
 
+#cuisine {
+  width: 100%;
+  font-family: 'Raleway', sans-serif
+  text-align: center;
+  color: #000033;
+  font-size: 18px;
+}
+
 #rating {
+  padding-top: 10px;
   width: 100%;
   text-align: center;
+  color: #FB8C00;
 }
