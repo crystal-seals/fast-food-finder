@@ -11,12 +11,11 @@ function getPostcodeLocation (code) {
 
  xhr.onreadystatechange = function() {
    if (xhr.readyState === 4 && xhr.status === 200) {
-       var response = JSON.parse(xhr.response)
-       if (formInput.value.length > 5){
-           console.log(test)
-           latitude = latlong.latitude
-           longitude = latlong.longitude
-       }
+     console.log('Response from Ajax call:', xhr.response);
+
+       var json = JSON.parse(xhr.response).result;
+       latitude = json.latitude;
+       longitude = json.longitude;
        getRestaurants();
        document.getElementById('loading-screen').style.display = "block"
        document.getElementById('homepage').style.display = "none";
@@ -30,8 +29,8 @@ function getPostcodeLocation (code) {
      }
  }
 
- xhr.open('GET', baseUrl + path, true)
- xhr.send()
+ xhr.open('GET', baseUrl + path, true);
+ xhr.send();
 }
 
 
@@ -44,7 +43,8 @@ document.getElementById('button').addEventListener("click", function() {
 var xhr = new XMLHttpRequest();
 
 function updateRestaurant() {
-  var result = JSON.parse(xhr.response)
+  var result = JSON.parse(xhr.response);
+  console.log('bullet proof', result); //result is empty
   var input = result.restaurants[count].restaurant;
   currentRestaurant.name = input.name
   currentRestaurant.id = input.id;
@@ -65,7 +65,11 @@ function updateRestaurant() {
       updateRestaurant();
     }
   }
-  xhr.open('GET', 'https://developers.zomato.com/api/v2.1/search?count=20&lat=' + latitude + "&lon=" + longitude + "&radius=1000&cuisines=40&sort=real_distance&apikey=3c2968b8e9cb6e81212628d734ccb726", true)
+// console.log("https://developers.zomato.com/api/v2.1/search?count=20&lat=51.4826&lon=0.0077&radius=1000&cuisines=40&sort=real_distance&apikey=3c2968b8e9cb6e81212628d734ccb726");
+// console.log('https://developers.zomato.com/api/v2.1/search?count=20&lat=' + latitude + "&lon=" + longitude + "&radius=1000&cuisines=40&sort=real_distance&apikey=3c2968b8e9cb6e81212628d734ccb726");
+
+  console.log('fetching restaurants from zomato', latitude, longitude);
+  xhr.open('GET', "https://developers.zomato.com/api/v2.1/search?count=20&lat=" + latitude + "&lon=" + longitude + "&radius=1000&cuisines=40&sort=real_distance&apikey=3c2968b8e9cb6e81212628d734ccb726", true)
   xhr.send();
 }
 setTimeout(function(){
@@ -75,13 +79,13 @@ document.getElementById('button').style.display = 'block';
 document.getElementById("button1").addEventListener("click", function() {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-        console.log("ITS WORKING")
       updateRestaurant();
       if (count === 19) {
         count = 0;
       }
     }
   }
+
   xhr.open('GET', 'https://developers.zomato.com/api/v2.1/search?count=20&lat=' + latitude + "&lon=" + longitude + "&radius=1000&cuisines=40&sort=real_distance&apikey=3c2968b8e9cb6e81212628d734ccb726", true)
   xhr.send();
 });
@@ -111,7 +115,7 @@ function getGeolocation(callback){
 
     function error(err) {
         console.warn('ERROR(' + err.code + '): ' + err.message);
-        alert('Geolocation Error!');
+        // alert('Geolocation Error!');
     };
 
     navigator.geolocation.getCurrentPosition(success, error, options);
