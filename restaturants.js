@@ -35,7 +35,7 @@ function updateRestaurant() {
   xhr.send();
 }
 
-document.getElementById("button").addEventListener("click", function() {
+document.getElementById("button1").addEventListener("click", function() {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
       updateRestaurant();
