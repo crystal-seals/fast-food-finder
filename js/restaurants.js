@@ -1,15 +1,44 @@
 var longitude, latitude;
 var currentRestaurant = {};
+var latlong = {};
+
+function getPostcodeLocation (code) {
+ var baseUrl = "https://api.postcodes.io";
+ var path = "/postcodes/" + code + ""
+ console.log(path, "hello")
+
+ var xhr = new XMLHttpRequest ()
+
+ xhr.onreadystatechange = function() {
+   if (xhr.readyState === 4 && xhr.status === 200) {
+       var response = JSON.parse(xhr.response)
+       if (formInput.value.length > 5){
+           console.log(test)
+           latitude = latlong.latitude
+           longitude = latlong.longitude
+       }
+       getRestaurants();
+       document.getElementById('loading-screen').style.display = "block"
+       document.getElementById('homepage').style.display = "none";
+       setTimeout(function(){
+       document.getElementById('results').style.display = "block";
+       document.getElementById('loading-screen').style.display = "none"
+
+       }, 2000)
+       latlong.longitude = response.result.longitude
+       latlong.latitude = response.result.latitude
+     }
+ }
+
+ xhr.open('GET', baseUrl + path, true)
+ xhr.send()
+}
+
 
 document.getElementById('button').addEventListener("click", function() {
-    getRestaurants();
-    document.getElementById('loading-screen').style.display = "block"
-    document.getElementById('homepage').style.display = "none";
-    setTimeout(function(){
-    document.getElementById('results').style.display = "block";
-    document.getElementById('loading-screen').style.display = "none"
+    var formInput = document.getElementById('code');
+    getPostcodeLocation(formInput.value);
 
-}, 2000)
 })
 
 var xhr = new XMLHttpRequest();
@@ -59,10 +88,8 @@ document.getElementById("button1").addEventListener("click", function() {
 
 function updateElements() {
   document.getElementById("image").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
-  // document.getElementById("address").innerHTML = currentRestaurant.address;
   document.getElementById("title").innerHTML = currentRestaurant.name;
   document.getElementById("cuisine").innerHTML = currentRestaurant.cuisines + '<br>' + currentRestaurant.address + '<br>' + currentRestaurant.rating + '/5';
-  // document.getElementById("rating").innerHTML = currentRestaurant.rating + '/5';
   document.getElementById("link").href = "http://maps.google.com/?q=" + currentRestaurant.latitude + "," + currentRestaurant.longitude;
 
 }
