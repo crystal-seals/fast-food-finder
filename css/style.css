@@ -12,6 +12,7 @@ body {
 }
 
 #button {
+  display: none;
   position: absolute;
   bottom: 10%;
   margin-left: 35%;
