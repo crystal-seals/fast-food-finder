@@ -1,6 +1,11 @@
 var longitude, latitude;
 var currentRestaurant = {};
 
+document.getElementById('button').addEventListener("click", function() {
+  document.getElementById('homepage').style.display = "none";
+  document.getElementById('results').style.display = "block";
+})
+
 var xhr = new XMLHttpRequest();
 
 function updateRestaurant() {

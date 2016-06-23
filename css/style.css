@@ -37,13 +37,13 @@ body {
 }
 
 #results {
-  display: block;
+  display: none;
   width: 100vw;
   height: 100vh;
 }
 
 #homepage {
-  display: none;
+  display: block;
   width: 100vw;
   height: 100vh;
 }
