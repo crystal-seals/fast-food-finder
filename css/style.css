@@ -35,3 +35,15 @@ body {
 #code {
   width: 100%;
 }
+
+#results {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+#homepage {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
