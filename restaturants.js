@@ -2,9 +2,14 @@ var longitude, latitude;
 var currentRestaurant = {};
 
 document.getElementById('button').addEventListener("click", function() {
-  document.getElementById('homepage').style.display = "none";
-  document.getElementById('results').style.display = "block";
-  getRestaurants();
+    getRestaurants();
+    document.getElementById('loading-screen').style.display = "block"
+    document.getElementById('homepage').style.display = "none";
+    setTimeout(function(){
+    document.getElementById('results').style.display = "block";
+    document.getElementById('loading-screen').style.display = "none"
+
+}, 2000)
 })
 
 var xhr = new XMLHttpRequest();
@@ -54,9 +59,10 @@ document.getElementById("button1").addEventListener("click", function() {
 
 function updateElements() {
   document.getElementById("image").style.backgroundImage = "url(" + currentRestaurant.thumb + ")"
+  // document.getElementById("address").innerHTML = currentRestaurant.address;
   document.getElementById("title").innerHTML = currentRestaurant.name;
-  document.getElementById("cuisine").innerHTML = currentRestaurant.cuisines;
-  document.getElementById("rating").innerHTML = currentRestaurant.rating + '/5';
+  document.getElementById("cuisine").innerHTML = currentRestaurant.cuisines + '<br>' + currentRestaurant.address + '<br>' + currentRestaurant.rating + '/5';
+  // document.getElementById("rating").innerHTML = currentRestaurant.rating + '/5';
   document.getElementById("link").href = "http://maps.google.com/?q=" + currentRestaurant.latitude + "," + currentRestaurant.longitude;
 
 }

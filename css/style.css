@@ -48,4 +48,19 @@ body {
   display: block;
   width: 100vw;
   height: 100vh;
+  background-color: inherit;
+}
+#loading-screen{
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+    display: none;
+
+}
+#loader{
+    position: absolute;
+    width: 10%;
+    height: auto;
+    left: 45%;
+    top: 45%;
 }
