@@ -3,19 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Fast Food Finder</title>
-    <link rel="stylesheet" type="text.css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/card.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div id="postcode-getter-container">
-      <form id="postcode-getter">
-          <input type="text" placeholder="Postcode" id="code" name="code">
-          <input type="submit" value="Submit">
-      </form>
+    <div id="homepage">
+        <div>
+          <img id="logo" src="logo.png" alt="Fast Food Finder"
+        </div>
+        <div id="postcode-getter-container">
+          <form id="postcode-getter">
+              <input type="text" placeholder="Postcode" id="code" name="code">
+          </form>
+        </div>
+        <div>
+          <div id="button"></div>
+        </div>
     </div>
-    <div id="postcode-results-container">
-        <div id="results-body"></div>
+    <div id="results">
+        
     </div>
-    <script src="key.config"></script>
     <script src="./js/postcode.js"></script>
     <script src="./js/traveltime.js"></script>
   </body>
