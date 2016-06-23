@@ -41,7 +41,7 @@ function updateRestaurant() {
 }
 setTimeout(function(){
 document.getElementById('button').style.display = 'block';
-}, 1000);
+}, 4000);
 
 document.getElementById("button1").addEventListener("click", function() {
   xhr.onreadystatechange = function() {
