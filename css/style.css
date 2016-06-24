@@ -12,9 +12,8 @@ body {
 }
 
 #button {
-  display: none;
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
   margin-left: 35%;
   cursor: pointer;
   width: 30%;
@@ -32,6 +31,19 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 24px;
   font-weight: 200;
+}
+#current-location-container{
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    margin-left: 21%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+#location{
+    height: 15px;
+    width: 15px;
 }
 
 #code {
