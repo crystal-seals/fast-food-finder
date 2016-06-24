@@ -50,6 +50,11 @@ body {
   width: 100%;
 }
 
+input {
+  border: black solid 0.2em;
+  padding: 0.5em;
+}
+
 #results {
   display: none;
   width: 100vw;
