@@ -1,5 +1,12 @@
 #Fast Food Finder
 
+__To get the current location feature to work, you need to set up a local server__
+
+1. Install node and npm
+2. npm install -g browser-sync (sets up a local server)
+3. Go to the project folder and  browser-sync start --server --files *
+4. Now you can get the current location!
+
 
 ##What
 
