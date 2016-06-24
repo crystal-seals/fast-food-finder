@@ -32,6 +32,7 @@ function getPostcodeLocation (code) {
 
 
 document.getElementById('button').addEventListener("click", function() {
+    document.getElementById('current-location-container').style.display = 'none';
     var formInput = document.getElementById('code');
     getPostcodeLocation(formInput.value);
 
