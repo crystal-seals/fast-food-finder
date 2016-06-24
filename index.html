@@ -10,36 +10,32 @@
   </head>
   <body>
     <div id="loading-screen">
-
         <img id="loader" src="imgs/loader.gif"/>
-
     </div>
     <div id="homepage">
-            <div>
-              <img id="logo" src="imgs/logo.png" alt="Fast Food Finder"
-            </div>
-            <div id="postcode-getter-container">
-              <form id="postcode-getter">
-                  <input type="text" placeholder="Postcode" id="code" name="code">
-
-              </form>
-            </div>
-            <div>
-              <div class="animated bounceIn" id="button"></div>
-            </div>
-    </div></div>
-    <div>
+      <div>
+        <img id="logo" src="imgs/logo.png" alt="Fast Food Finder">
+      </div>
+      <div id="postcode-getter-container">
+        <form id="postcode-getter">
+          <input type="text" placeholder="Postcode" id="code" name="code">
+        </form>
+      </div>
+      <div class="animated bounceIn" id="button"></div>
+      <div>
         <div id="current-location-container"> Use current location <img id="location" class="animated bounceIn" src="imgs/location_arrow.png"</div>
-    </div>
-    <div id="results">
-            <div class="card transition">
-              <h2 class="transition" id="title">Awesome Headline</h2>
-              <p id="cuisine"></p>
-              <div class="cta-container transition"><a href="#" class="cta" id="link">FIND ON MAP</a></div>
-              <div class="card_circle transition" id="image"></div>
-            </div>
-            <div id="button1" class="round-button"><div class="round-button-circle"></div></div>
-    </div>
+      </div>
+      <div id="results">
+        <div class="card transition">
+          <h2 class="transition" id="title">Awesome Headline</h2>
+          <p id="cuisine"></p>
+          <div class="cta-container transition">
+            <a href="#" class="cta" id="link">FIND ON MAP</a>
+          </div>
+          <div class="card_circle transition" id="image"></div>
+        </div>
+        <div id="button1" class="round-button"><div class="round-button-circle"></div></div>
+      </div>
     <script src="js/postcode.js"></script>
     <script src="js/traveltime.js"></script>
     <script src="js/restaurants.js"></script>
